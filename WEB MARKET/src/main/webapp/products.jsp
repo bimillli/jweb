@@ -30,6 +30,7 @@
 		<div class="row" align="center">
 		<%
 			//ProductRepository productDAO = new ProductRepository();
+			//dao상세보기 메소드
 			ProductRepository productDAO = ProductRepository.getInstance();
 			ArrayList<Product> listOfProducts = productDAO.getAllProducts();
 			

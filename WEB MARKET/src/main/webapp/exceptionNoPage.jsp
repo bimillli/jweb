@@ -22,36 +22,17 @@
 	
 	<div class="jumbotron">
 		<div class="container">
-			<h1 class="display-3">로그인</h1>
+			<h1 class="display-3">요청하신 페이지를 찾을 수 없습니다.</h1>
 		</div>
 	</div>
 	<div class="container" align="center">
-		<div class="col-md-4">
-		<h3>Please Sign In</h3>
-		<%
-			String error = request.getParameter("error");
-			if(error != null){ //error가 있으면
-				out.println("<div class='alert alert-danger'>");
-				out.println("아이디와 비밀번호를 확인해 주세요");
-				out.println("</div>");
-			}
-		%>
-		<form action="j_security_check" method="post">
-				<div class="form-group">
-					<label for="inputUserName" class="sr-only">User Name</label>
-					<input type="text" name="j_username" class="form-control"
-						   placeholder="ID" required, autofocus>
-				</div>
-				<div class="form-group">
-					<label for="inputUserPassword" class="sr-only">Password</label>
-					<input type="password" name="j_password" class="form-control"
-						   placeholder="Password" required>
-				</div>
-				<button type="submit" class="btn btn-success btn-block">로그인</button>
-		</form>
-		</div>
+		<h1 class="alert alert-danger">요청하신 페이지를 찾을 수 없습니다.</h1>
+	</div>
+	<div class="container">
+		<p><%=request.getRequestURL()%>, <%=request.getQueryString() %>
+		<p><a href="./products.jsp" class="btn btn-secondary">상품 목록</a>
 	</div>
 	<jsp:include page="./footer.jsp"/>
-
+	
 </body>
 </html>
